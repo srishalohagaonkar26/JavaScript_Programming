@@ -22,7 +22,7 @@ const rl = readline.createInterface
     }
 );
 
-rl.question("Enter a number: ", (input) => {
+rl.question("Enter a number: ", (input) =>{
     let iValue = Number(input);
 
     let bRet = CheckEvenOdd(iValue);  // NEW: stores Boolean result in bRet variable

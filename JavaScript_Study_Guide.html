@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals: Comparison with C, C++, and Java</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 5px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 14px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #d63384;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: #ecf0f1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background: #ecf0f1;
+        }
+
+        tr:hover {
+            background: #d5dbdb;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .comparison {
+            background: #f9f9f9;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .tip {
+            background: #d5f4e6;
+            border-left: 4px solid #27ae60;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .warning {
+            background: #fadbd8;
+            border-left: 4px solid #e74c3c;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .key-point {
+            background: #e8f4f8;
+            border: 1px solid #3498db;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: #ecf0f1;
+            margin: 30px 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                padding: 0;
+            }
+            h1 { page-break-after: avoid; }
+            h2 { page-break-after: avoid; }
+            h3 { page-break-after: avoid; }
+            p { page-break-inside: avoid; }
+            table { page-break-inside: avoid; }
+            pre { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Fundamentals</h1>
+        <p class="subtitle">Comparison with C, C++, and Java</p>
+        <hr>
+
+        <div class="section">
+            <h2>1. BOOLEAN CONCEPT</h2>
+            <p><strong>What is Boolean?</strong></p>
+            <ul>
+                <li>A data type holding only TWO values: <code>true</code> or <code>false</code></li>
+                <li>Think of it like a light switch: ON or OFF, nothing in between</li>
+                <li>Makes code intent crystal clear</li>
+            </ul>
+
+            <h3>In C/Java:</h3>
+            <pre><code>if (iNo % 2 === 0) {
+    return true;   // even
+} else {
+    return false;  // odd
+}</code></pre>
+
+            <h3>In JavaScript:</h3>
+            <pre><code>function checkEvenOdd(iNo) {
+    if (iNo % 2 === 0) {
+        return true;   // even
+    } else {
+        return false;  // odd
+    }
+}
+let bResult = checkEvenOdd(5);
+if (bResult === true) {
+    console.log("Even");
+} else {
+    console.log("Odd");
+}</code></pre>
+
+            <div class="key-point">
+                <strong>Why use Boolean instead of 0/1?</strong><br>
+                ✓ Clearer intent (yes/no instead of 1/0)<br>
+                ✓ Professional/industrial practice<br>
+                ✓ Makes code self-documenting
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. GETTING USER INPUT</h2>
+
+            <h3>In C:</h3>
+            <pre><code>#include &lt;stdio.h&gt;
+scanf("%d", &x);</code></pre>
+
+            <h3>In Java:</h3>
+            <pre><code>Scanner sobj = new Scanner(System.in);
+int x = sobj.nextInt();</code></pre>
+
+            <h3>In JavaScript (Node.js):</h3>
+            <pre><code>const readline = require("readline-sync");
+let iValue = readline.question("Enter number: ");
+iValue = Number(iValue);  // Convert to number</code></pre>
+
+            <div class="tip">
+                <strong>Important:</strong> <code>readline-sync</code> is a <strong>package</strong> (must install)<br>
+                <code>npm install readline-sync</code>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. TYPE CONVERSION / TYPE COERCION</h2>
+            <p><strong>Why convert?</strong> Terminal input is always TEXT. You need NUMBERS for math/loops.</p>
+
+            <h3>Three Ways (all work the same):</h3>
+            <pre><code>// Method 1: Number()
+let iValue = Number("5");      // → 5
+let iFloat = Number("3.14");   // → 3.14
+
+// Method 2: parseInt()
+parseInt("5");                 // → 5
+parseInt("5.99");              // → 5 (ignores decimal)
+
+// Method 3: parseFloat()
+parseFloat("3.14");            // → 3.14</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>4. console.log() vs printf()</h2>
+
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>C - printf()</th>
+                    <th>JavaScript - console.log()</th>
+                </tr>
+                <tr>
+                    <td>New line</td>
+                    <td>Requires \n</td>
+                    <td>Automatic each call</td>
+                </tr>
+                <tr>
+                    <td>String concatenation</td>
+                    <td>Supported with +</td>
+                    <td>Supported with + or template literals</td>
+                </tr>
+                <tr>
+                    <td>Modern way</td>
+                    <td>N/A</td>
+                    <td>Template literals: `Hello ${name}`</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>5. typeof OPERATOR</h2>
+            <p><strong>What:</strong> Tells you what data type something is</p>
+
+            <pre><code>let x = 5;
+console.log(typeof x);              // → "number"
+
+let name = "Shreesha";
+console.log(typeof name);           // → "string"</code></pre>
+
+            <div class="key-point">
+                <strong>Use Case:</strong> Verify data type before using it. Especially useful after converting input.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>6. CLASSES & CONSTRUCTORS</h2>
+
+            <h3>In JavaScript:</h3>
+            <pre><code>class Student {
+    constructor(name, age) {
+        this.name = name;      // this = the object being created
+        this.age = age;
+    }
+}
+
+let student1 = new Student("Shreesha", 20);
+console.log(student1.name);     // → Shreesha</code></pre>
+
+            <div class="key-point">
+                <strong>Key Points:</strong><br>
+                ✓ constructor() runs when you create object with new<br>
+                ✓ this.name stores in the object (permanent)<br>
+                ✓ this disappears after constructor ends<br>
+                ✓ Each new allocates separate memory for that object<br>
+                ✓ Class definition ALONE = NO memory allocated
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>7. NO POINTERS, BUT HAVE REFERENCES</h2>
+
+            <pre><code>let obj1 = new Student("Shreesha", 20);
+let obj2 = obj1;  // obj2 points to SAME object
+obj2.name = "Priya";
+console.log(obj1.name);  // → Priya (changed!)</code></pre>
+
+            <div class="comparison">
+                <strong>Why different?</strong><br>
+                <strong>C:</strong> Manually create pointers with & and *<br>
+                <strong>JavaScript:</strong> References automatic, garbage collection automatic
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>8. NO DESTRUCTORS</h2>
+
+            <div class="key-point">
+                <strong>Why?</strong><br>
+                ✓ C++: Manual memory management → need destructors<br>
+                ✓ JavaScript: Automatic garbage collection → no destructors<br>
+                ✓ Simpler, safer, fewer bugs
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>9. NO MACROS IN JAVASCRIPT</h2>
+
+            <h3>C uses macros:</h3>
+            <pre><code>#define AGE_INVALID -1  // compile-time replacement</code></pre>
+
+            <h3>JavaScript uses constants:</h3>
+            <pre><code>const AGE_INVALID = -1;  // runtime constant</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>10. FEATURE COMPARISON TABLE</h2>
+
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>C++</th>
+                    <th>Java</th>
+                    <th>JavaScript</th>
+                </tr>
+                <tr>
+                    <td><strong>Classes</strong></td>
+                    <td>✅ Yes</td>
+                    <td>✅ Yes</td>
+                    <td>✅ Yes</td>
+                </tr>
+                <tr>
+                    <td><strong>Constructors</strong></td>
+                    <td>✅ Yes</td>
+                    <td>✅ Yes</td>
+                    <td>✅ Yes</td>
+                </tr>
+                <tr>
+                    <td><strong>Every program in class</strong></td>
+                    <td>❌ No</td>
+                    <td>✅ Yes</td>
+                    <td>❌ No</td>
+                </tr>
+                <tr>
+                    <td><strong>Constructor overloading</strong></td>
+                    <td>✅ Yes</td>
+                    <td>✅ Yes</td>
+                    <td>❌ No (1 per class)</td>
+                </tr>
+                <tr>
+                    <td><strong>Data types required</strong></td>
+                    <td>✅ Yes</td>
+                    <td>✅ Yes</td>
+                    <td>❌ No (auto)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>11. CONSTRUCTOR RULES</h2>
+
+            <h3>❌ This causes ERROR:</h3>
+            <pre><code>class Demo {
+    constructor() {
+        this.no1 = 0;
+    }
+
+    constructor(a, b) {  // ERROR: Cannot have two!
+        this.no1 = a;
+        this.no2 = b;
+    }
+}</code></pre>
+
+            <h3>✅ This is CORRECT:</h3>
+            <pre><code>class Demo {
+    constructor(a = 0, b = 0) {  // Use default parameters
+        this.no1 = a;
+        this.no2 = b;
+    }
+}
+
+let obj1 = new Demo();        // Uses defaults (0, 0)
+let obj2 = new Demo(11, 21);  // Uses provided values</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>12. STATIC METHODS</h2>
+
+            <h3>Static (no object needed):</h3>
+            <pre><code>class NumberX {
+    static CheckDivisible(iNo) {
+        return (iNo % 3 === 0 && iNo % 5 === 0);
+    }
+}
+
+// Call WITHOUT creating object
+NumberX.CheckDivisible(15);  // → true</code></pre>
+
+            <h3>Non-static (object required):</h3>
+            <pre><code>class NumberX {
+    CheckDivisible(iNo) {  // no 'static'
+        return (iNo % 3 === 0 && iNo % 5 === 0);
+    }
+}
+
+let obj = new NumberX();
+let bResult = obj.CheckDivisible(15);  // Need object first</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>13. ERROR HANDLING</h2>
+
+            <pre><code>const AGE_INVALID = -1;
+
+function calculatePrice(iAge) {
+    if (iAge < 0) {
+        return AGE_INVALID;  // Return error code
+    }
+    if (iAge >= 0 && iAge <= 5) return 0;
+    if (iAge > 5 && iAge <= 18) return 100;
+    return 200;
+}
+
+// Calling code MUST check for error:
+let iRet = calculatePrice(iValue);
+if (iRet === AGE_INVALID) {
+    console.log("Invalid age entered.");
+} else {
+    console.log("Ticket price: " + iRet);
+}</code></pre>
+
+            <div class="tip">
+                <strong>Why constants?</strong><br>
+                ✓ More readable than magic numbers (-1)<br>
+                ✓ Easy to change one place<br>
+                ✓ Professional practice
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>14. KEY TAKEAWAYS</h2>
+
+            <ol>
+                <li><strong>No explicit type declaration</strong> - Types are automatic</li>
+                <li><strong>No pointers</strong> - References are automatic</li>
+                <li><strong>No manual memory management</strong> - Garbage collection handles it</li>
+                <li><strong>No macros</strong> - Use const instead</li>
+                <li><strong>No destructors</strong> - Automatic cleanup</li>
+                <li><strong>No constructor overloading</strong> - Use default parameters</li>
+                <li><strong>User input is always text</strong> - Must convert with Number()</li>
+                <li><strong>console.log() auto-newlines</strong> - Unlike printf()</li>
+                <li><strong>Template literals are better</strong> - `Text ${variable}` cleaner than +</li>
+                <li><strong>Code can exist outside classes</strong> - Like C++, unlike Java</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>15. COMPLETE EXAMPLE PROGRAM</h2>
+
+            <pre><code>const readline = require("readline-sync");
+const INVALID_PRICE = -1;
+
+class TicketCalculator {
+    static calculatePrice(iAge) {
+        if (iAge < 0) {
+            return INVALID_PRICE;
+        }
+        if (iAge >= 0 && iAge <= 5) return 0;
+        if (iAge > 5 && iAge <= 18) return 100;
+        return 200;
+    }
+}
+
+// Main code
+let iAge = readline.question("Enter age: ");
+iAge = Number(iAge);  // CONVERT!
+
+let iRet = TicketCalculator.calculatePrice(iAge);
+
+if (iRet === INVALID_PRICE) {
+    console.log("Invalid age entered.");
+} else {
+    console.log(`Ticket price: ${iRet} rupees`);
+}</code></pre>
+        </div>
+
+        <hr>
+        <p style="text-align: center; color: #7f8c8d; margin-top: 40px;">
+            <strong>JavaScript Study Guide</strong> | Comprehensive comparison with C, C++, and Java<br>
+            Created: September 2026
+        </p>
+    </div>
+</body>
+</html>
